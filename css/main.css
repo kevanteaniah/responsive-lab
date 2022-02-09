@@ -1,0 +1,158 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+body {
+  background-color: darkgreen;
+  height: 100vh;
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+main {
+
+  border: 1px solid red;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+img {
+
+  border-radius: 50%;
+  border: 2px solid rgb(1, 247, 1)  ;
+
+}
+
+#status {
+
+  justify-content: right;
+  text-align: right;
+  margin-left: auto;
+  padding: 5px ;
+
+}
+
+#brand {
+
+  display: none;
+
+}
+
+#occupation {
+
+  background-color: rgb(230, 229, 229);
+  width: 100%;
+  text-align: center;
+
+}
+
+#contact{
+
+  display: flex;
+  /* border: 1px solid red; */
+  width: 100%;
+  
+
+}
+
+#contact p{
+  background-color: limegreen;
+  width: 50%;
+  /* border: 1px dotted blue; */
+  text-align: center;
+  padding: 25px;
+  margin: 0px;
+
+}
+
+#contact p:first-child{
+
+  background-color: rgb(16, 161, 16);
+  /*selecting first child*/
+}
+/* change to grid display*/
+@media only screen and (min-width: 600px){
+  main {
+    /* tablet - two column display */
+    width: 700px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /*width*/
+    grid-template-rows: auto auto auto auto;
+    /*height*/
+    grid-template-areas: 
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer";
+    /*designing the grid
+    apply to propeties later*/    
+  }
+
+  #status {
+
+    grid-area: status;
+    margin-right: auto;
+    
+    width: 100%;
+    text-align: left;
+
+  }
+
+  #name {
+
+    grid-area: name;
+    text-align: center;
+  }
+
+  img {
+    grid-area: img;
+    margin: 0 auto;
+    /*center element within a parent*/
+  
+  }
+
+  #occupation {
+
+    grid-area: occupation;
+  }
+
+  #brand {
+
+    grid-area: brand;
+    display: flex;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-left: 1px solid rgb(3, 172, 3);
+    
+  }
+
+  #contact {
+
+    grid-area: contact;
+  }
+
+  #offer {
+
+    grid-area: offer;
+    padding-left: 6px;
+  }
+}
+
